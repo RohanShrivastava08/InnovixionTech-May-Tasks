@@ -1,0 +1,173 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient( #eca222, #81f5ef);
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+#date-container {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.todo-container {
+    background: linear-gradient(#c1c1c1,#c1a1fd);
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.completed-tasks-container {
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.completed-tasks-container h2 {
+    margin-top: 0;
+}
+
+.input-container {
+    display: flex;
+    margin-bottom: 1rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+input#new-task {
+    width: calc(100% - 130px);
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 0.50rem;
+}
+
+button#add-task-btn, button#clear-completed-btn {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    background-color: #4CAF50; /* Changed button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transition for transform */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Added shadow */
+}
+
+button#add-task-btn:hover, button#clear-completed-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* Slightly lift the button on hover */
+}
+
+ul#task-list, ul#completed-task-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+ul#task-list li, ul#completed-task-list li {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+ul#task-list li:hover, ul#completed-task-list li:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.02);
+}
+
+ul#task-list li.completed {
+    text-decoration: line-through;
+    color: #888;
+    background-color: #f0f0f0;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .todo-container, .completed-tasks-container {
+        padding: 1rem;
+    }
+
+    .input-container {
+        flex-direction: column;
+    }
+
+    input#new-task {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    button#add-task-btn, button#clear-completed-btn {
+        width: 100%;
+        padding: 0.75rem 0;
+    }
+}
